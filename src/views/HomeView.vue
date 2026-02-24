@@ -137,10 +137,10 @@ const openAIParser = () => {
 
     <Teleport to="body">
       <Transition name="fade">
-        <div v-if="showAIParser" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4">
+        <div v-if="showAIParser" class="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div class="absolute inset-0 bg-black/50" @click="showAIParser = false"></div>
           
-          <div class="relative bg-white rounded-t-3xl sm:rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto">
+          <div class="relative bg-white rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto">
             <div class="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
               <h2 class="text-lg font-semibold text-gray-900">添加收藏</h2>
               <button @click="showAIParser = false" class="p-2 -mr-2 text-gray-400 hover:text-gray-600">

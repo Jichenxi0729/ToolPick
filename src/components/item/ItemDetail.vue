@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { ExternalLink, Pencil, Trash2, X } from 'lucide-vue-next'
+import { formatDate, formatDateTime } from '../../utils/helpers'
 
 const props = defineProps({
   item: {
@@ -129,6 +130,17 @@ const handleClose = () => {
               <ExternalLink class="w-4 h-4" />
               打开链接
             </a>
+
+            <div class="pt-4 border-t border-gray-100">
+              <div class="text-xs text-gray-500 space-y-1">
+                <div v-if="item.created_at">
+                  <span>创建时间：{{ formatDateTime(item.created_at) }}</span>
+                </div>
+                <div v-if="item.updated_at">
+                  <span>修改时间：{{ formatDateTime(item.updated_at) }}</span>
+                </div>
+              </div>
+            </div>
 
             <div class="flex gap-3 pt-4 border-t border-gray-100">
               <button

@@ -48,31 +48,32 @@ const isIconUrl = computed(() => {
       <h3 class="font-semibold text-gray-900 text-base leading-tight truncate min-w-0 flex-1">{{ item.name || '未命名' }}</h3>
     </div>
 
-    <p v-if="displayText" class="text-xs text-gray-500 mb-2 line-clamp-2">
+    <p v-if="displayText" class="text-xs text-gray-500 mb-2 line-clamp-2 leading-relaxed">
       {{ truncateText(displayText, 80) }}
     </p>
 
-    <div class="flex items-center gap-1.5 flex-wrap mb-1">
-      <span 
-        :class="[
-          'px-2 py-0.5 rounded text-xs font-medium',
-          getCategoryColor(item.category)
-        ]"
-      >
-        {{ item.category || '未分类' }}
-      </span>
-      <span 
-        :class="[
-          'px-2 py-0.5 rounded text-xs font-medium',
-          getTypeColor(item.type)
-        ]"
-      >
-        {{ item.type || '自定义' }}
-      </span>
-    </div>
-
-    <div class="text-xs text-gray-400">
-      {{ formatDate(item.created_at) }}
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span 
+          :class="[
+            'px-2 py-0.5 rounded text-xs font-medium',
+            getCategoryColor(item.category)
+          ]"
+        >
+          {{ item.category || '未分类' }}
+        </span>
+        <span 
+          :class="[
+            'px-2 py-0.5 rounded text-xs font-medium',
+            getTypeColor(item.type)
+          ]"
+        >
+          {{ item.type || '自定义' }}
+        </span>
+      </div>
+      <div class="text-xs text-gray-400">
+        {{ formatDate(item.created_at) }}
+      </div>
     </div>
   </div>
 </template>
